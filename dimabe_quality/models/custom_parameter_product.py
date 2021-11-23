@@ -32,3 +32,14 @@ class ModelName(models.Model):
         if self.min_value and self.max_value:
             if self.min_value > self.max_value:
                 raise models.UserError('El valor minimo no puede ser mayor al valor maximo')
+            elif self.max_value < self.min_value:
+                raise models.UserError('El valor maximo no puede ser menor al valor minimo')
+
+    @api.onchange('parameter_id')
+    def _onchange_parameter_id(self):
+        res = {
+            "domain": {
+                "parameter_id": [('id','not in',self.product_id.quality_parameter_ids.mapped('parameter_id').ids)]
+            }
+        }
+        return res
