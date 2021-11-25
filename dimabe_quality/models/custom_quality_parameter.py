@@ -6,3 +6,5 @@ class CustomQualityParameter(models.Model):
     _description = 'Parametros de Calidad'
 
     name = fields.Char('Nombre')
+
+

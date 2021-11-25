@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_custom_quality_parameter,dimabe_quality.custom_quality_parameter,model_custom_quality_parameter,,1,1,1,1
 access_custom_parameter_product,dimabe_quality.custom_parameter_product,model_custom_parameter_product,,1,1,1,1
+access_custom_parameter_value,dimabe_quality.custom_parameter_value,model_custom_parameter_value,,1,1,1,1
+access_custom_quality_check_parameter,dimabe_quality.custom_quality_check_parameter,model_custom_quality_check_parameter,,1,1,1,1

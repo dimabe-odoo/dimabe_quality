@@ -2,23 +2,23 @@
 <odoo>
     <data>
         <record id="custom_quality_parameter_tree_view" model="ir.ui.view">
-            <field name="name">Listado de Parametros</field>
+            <field name="name">Listado de Parámetros</field>
             <field name="model">custom.quality.parameter</field>
             <field name="arch" type="xml">
-                <tree string="Parametros">
+                <tree string="Parametros" editable="bottom" create="true" delete="true">
                     <field name="name"/>
                 </tree>
             </field>
         </record>
 
         <record id="custom_quality_parameter_act_window" model="ir.actions.act_window">
-            <field name="name">Parametro de Productos</field>
+            <field name="name">Parámetro de Productos</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">custom.quality.parameter</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem name="Parametros" id="custom_quality_parameters" parent="quality_control.menu_quality_configuration"
+        <menuitem name="Parámetros" id="custom_quality_parameter_value" parent="quality_control.menu_quality_configuration"
                   action="custom_quality_parameter_act_window"/>
 
     </data>

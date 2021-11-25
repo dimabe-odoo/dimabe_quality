@@ -20,13 +20,15 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'quality', 'stock', 'product'],
+    'depends': ['base', 'quality','quality_control', 'stock', 'product'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'views/product_template.xml',
-        'views/custom_quality_parameter.xml'
+        'views/custom_quality_parameter.xml',
+        'views/custom_parameter_value.xml',
+        'views/quality_check.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

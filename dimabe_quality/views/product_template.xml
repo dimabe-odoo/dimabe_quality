@@ -3,20 +3,26 @@
     <data>
 
         <record id="product_product_custom_quality_parameter_form_inherit" model="ir.ui.view">
-            <field name="name">Parametros de Calidad</field>
+            <field name="name">Parámetros de Calidad</field>
             <field name="model">product.template</field>
             <field name="inherit_id" ref="product.product_template_form_view"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='inventory']" position="after">
-                    <page name="quality" string="Calidad">
+                    <page name="quality" string="Parámetros de Calidad">
                         <group>
                             <field name="id" invisible="1"/>
                             <field name="quality_parameter_ids" context="{'default_product_id': id}">
                                 <tree editable="bottom" create="true" delete="true">
                                     <field name="parameter_id"/>
-                                    <field name="min_value"/>
-                                    <field name="max_value"/>
+                                    <field name="type_of_parameter"/>
+                                    <field name="min_value"
+                                           attrs="{'invisible': [('type_of_parameter','!=','range')]}"/>
+                                    <field name="max_value"
+                                           attrs="{'invisible': [('type_of_parameter','!=','range')]}"/>
+                                    <field name="parameter_value_id" context="{'default_parameter_id':parameter_id}"
+                                           domain="[('parameter_id','=',parameter_id)]"
+                                           attrs="{'invisible': [('type_of_parameter','=','range')]}"/>
                                     <field name="remark"/>
                                 </tree>
                             </field>
